@@ -1,32 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
 function App() {
-
-  const singer = {
-    name : 'mafuz',
-    age:'40'
-  }
+  const nayoks = ["Salman", "Sahrukh", "Akshay", "Ranveer"];
   return (
     <div className="App">
-      <header className="App-header">
-      <h3>hello from react</h3>
-      <div className="container">
-        
-      </div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> 
-      </header>
+      <ul>
+        {nayoks.map((nayok) => {
+          return <li>{nayok}</li>;
+        })}
+      </ul>
+      <Person name="Dip Pal" profession="programmer" />
+      <Person name="sergi Constance" profession="Body Builder" />
+      <Person name="Motherchod" profession="none" />
+    </div>
+  );
+}
+
+function Person(props) {
+  console.log(props);
+  const personStyle = {
+    backgroundColor: "skyblue",
+    border: "2px solid lightsalmon",
+    margin: "20px",
+    padding: "10px",
+    borderRadius: "5px",
+  };
+  return (
+    <div style={personStyle}>
+      <h3>{props.name}</h3>
+      <h5>profession : {props.profession}</h5>
+    </div>
+  );
+}
+
+function Friend() {
+  return (
+    <div>
+      <h4>phone : </h4>
     </div>
   );
 }
